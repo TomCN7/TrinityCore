@@ -1,0 +1,3 @@
+Copyright	COPYING	/^ Copyright (C) 1989, 1991 Free Software Foundation/
+cmake_minimum_required	CMakeLists.txt	/^cmake_minimum_required(VERSION 2.8)$/
+team	THANKS	/^Thanks to the ScriptDev2 team (http:\/\/www.script/
