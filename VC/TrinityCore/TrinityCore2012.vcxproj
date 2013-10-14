@@ -68,7 +68,6 @@
     <ClCompile Include="..\..\src\server\worldserver\PrecompiledHeaders\worldPCH.cpp" />
     <ClCompile Include="..\..\src\server\worldserver\WorldThread\WorldRunnable.cpp" />
     <ClCompile Include="..\..\src\server\authserver\Authentication\AuthCodes.cpp" />
-    <ClCompile Include="..\..\src\server\authserver\PrecompiledHeaders\authPCH.cpp" />
     <ClCompile Include="..\..\src\server\authserver\Server\AuthSocket.cpp" />
     <ClCompile Include="..\..\src\server\authserver\Main.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
@@ -1338,7 +1337,6 @@
     <ClInclude Include="..\..\src\server\worldserver\PrecompiledHeaders\worldPCH.h" />
     <ClInclude Include="..\..\src\server\worldserver\WorldThread\WorldRunnable.h" />
     <ClInclude Include="..\..\src\server\authserver\Authentication\AuthCodes.h" />
-    <ClInclude Include="..\..\src\server\authserver\PrecompiledHeaders\authPCH.h" />
     <ClInclude Include="..\..\src\server\authserver\Server\AuthSocket.h" />
     <ClInclude Include="..\..\src\server\authserver\Server\RealmAcceptor.h" />
     <ClInclude Include="..\..\src\server\authserver\Realms\RealmList.h" />
@@ -2438,7 +2436,6 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\src\server\worldserver\worldserver.rc" />
-    <ResourceCompile Include="..\..\src\server\authserver\authserver.rc" />
     <ResourceCompile Include="..\..\dep\acelite\ace\ace.rc" />
   </ItemGroup>
   <ItemGroup>

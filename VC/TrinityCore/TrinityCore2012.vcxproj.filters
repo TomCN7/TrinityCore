@@ -342,9 +342,6 @@
     <ClCompile Include="..\..\src\server\authserver\Authentication\AuthCodes.cpp">
       <Filter>AuthServer</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\server\authserver\PrecompiledHeaders\authPCH.cpp">
-      <Filter>AuthServer</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\server\authserver\Server\AuthSocket.cpp">
       <Filter>AuthServer</Filter>
     </ClCompile>
@@ -3863,9 +3860,6 @@
     <ClInclude Include="..\..\src\server\authserver\Authentication\AuthCodes.h">
       <Filter>AuthServer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\server\authserver\PrecompiledHeaders\authPCH.h">
-      <Filter>AuthServer</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\server\authserver\Server\AuthSocket.h">
       <Filter>AuthServer</Filter>
     </ClInclude>
@@ -7158,9 +7152,6 @@
   <ItemGroup>
     <ResourceCompile Include="..\..\src\server\worldserver\worldserver.rc">
       <Filter>WorldServer</Filter>
-    </ResourceCompile>
-    <ResourceCompile Include="..\..\src\server\authserver\authserver.rc">
-      <Filter>AuthServer</Filter>
     </ResourceCompile>
     <ResourceCompile Include="..\..\dep\acelite\ace\ace.rc">
       <Filter>Dep\acelite</Filter>
