@@ -165,14 +165,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\src\server\collision\PrecompiledHeaders\collisionPCH.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\server\collision\PrecompiledHeaders\collisionPCH.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\src\server\collision\DynamicTree.cpp"
 				>
 			</File>
@@ -350,14 +342,6 @@
 			</File>
 			<File
 				RelativePath="..\..\src\server\authserver\Authentication\AuthCodes.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\server\authserver\PrecompiledHeaders\authPCH.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\server\authserver\PrecompiledHeaders\authPCH.h"
 				>
 			</File>
 			<File
@@ -3914,11 +3898,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\libmpq\config.h"
+					RelativePath="..\..\dep\libmpq\win\config.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\libmpq\win\config.h"
+					RelativePath="..\..\dep\libmpq\config.h"
 					>
 				</File>
 				<File
@@ -4802,11 +4786,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\mysqllite\include\mysql\plugin.h"
+					RelativePath="..\..\dep\mysqllite\include\plugin.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\mysqllite\include\plugin.h"
+					RelativePath="..\..\dep\mysqllite\include\mysql\plugin.h"
 					>
 				</File>
 				<File
@@ -4826,11 +4810,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\mysqllite\include\plugin_ftparser.h"
+					RelativePath="..\..\dep\mysqllite\include\mysql\plugin_ftparser.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\mysqllite\include\mysql\plugin_ftparser.h"
+					RelativePath="..\..\dep\mysqllite\include\plugin_ftparser.h"
 					>
 				</File>
 				<File
@@ -5012,11 +4996,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\mysqllite\include\internal\t_ctype.h"
+					RelativePath="..\..\dep\mysqllite\strings\t_ctype.h"
 					>
 				</File>
 				<File
-					RelativePath="..\..\dep\mysqllite\strings\t_ctype.h"
+					RelativePath="..\..\dep\mysqllite\include\internal\t_ctype.h"
 					>
 				</File>
 				<File
