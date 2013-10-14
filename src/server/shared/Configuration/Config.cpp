@@ -20,22 +20,22 @@
 #include "Errors.h"
 
 // Defined here as it must not be exposed to end-users.
-bool ConfigMgr::GetValueHelper(const char* name, ACE_TString &result)
+bool ConfigMgr::GetValueHelper(const char* strName, ACE_TString &Result)
 {
-    GuardType guard(_configLock);
+    GuardType guard(m_configLock);
 
-    if (_config.get() == 0)
+    if (m_config.get() == 0)
         return false;
 
     ACE_TString section_name;
     ACE_Configuration_Section_Key section_key;
-    const ACE_Configuration_Section_Key &root_key = _config->root_section();
+    const ACE_Configuration_Section_Key &root_key = m_config->root_section();
 
     int i = 0;
-    while (_config->enumerate_sections(root_key, i, section_name) == 0)
+    while (m_config->enumerate_sections(root_key, i, section_name) == 0)
     {
-        _config->open_section(root_key, section_name.c_str(), 0, section_key);
-        if (_config->get_string_value(section_key, name, result) == 0)
+        m_config->open_section(root_key, section_name.c_str(), 0, section_key);
+        if (m_config->get_string_value(section_key, strName, Result) == 0)
             return true;
         ++i;
     }
@@ -43,40 +43,40 @@ bool ConfigMgr::GetValueHelper(const char* name, ACE_TString &result)
     return false;
 }
 
-bool ConfigMgr::LoadInitial(char const* file)
+bool ConfigMgr::LoadInitial(char const* szFile)
 {
-    ASSERT(file);
+    ASSERT(szFile);
 
-    GuardType guard(_configLock);
+    GuardType guard(m_configLock);
 
-    _filename = file;
-    _config.reset(new ACE_Configuration_Heap());
-    if (_config->open() == 0)
-        if (LoadData(_filename.c_str()))
+    m_filename = szFile;
+    m_config.reset(new ACE_Configuration_Heap());
+    if (m_config->open() == 0)
+        if (LoadData(m_filename.c_str()))
             return true;
 
-    _config.reset();
+    m_config.reset();
     return false;
 }
 
-bool ConfigMgr::LoadMore(char const* file)
+bool ConfigMgr::LoadMore(char const* szFile)
 {
-    ASSERT(file);
-    ASSERT(_config);
+    ASSERT(szFile);
+    ASSERT(m_config);
 
-    GuardType guard(_configLock);
+    GuardType guard(m_configLock);
 
-    return LoadData(file);
+    return LoadData(szFile);
 }
 
 bool ConfigMgr::Reload()
 {
-    return LoadInitial(_filename.c_str());
+    return LoadInitial(m_filename.c_str());
 }
 
 bool ConfigMgr::LoadData(char const* file)
 {
-    ACE_Ini_ImpExp config_importer(*_config.get());
+    ACE_Ini_ImpExp config_importer(*m_config.get());
     if (config_importer.import_config(file) == 0)
         return true;
 
@@ -96,8 +96,8 @@ bool ConfigMgr::GetBoolDefault(const char* name, bool def)
     if (!GetValueHelper(name, val))
         return def;
 
-    return (val == "true" || val == "TRUE" || val == "yes" || val == "YES" ||
-        val == "1");
+    return 
+		(val == "true" || val == "TRUE" || val == "yes" || val == "YES" || val == "1");
 }
 
 int ConfigMgr::GetIntDefault(const char* name, int def)
@@ -114,6 +114,6 @@ float ConfigMgr::GetFloatDefault(const char* name, float def)
 
 std::string const& ConfigMgr::GetFilename()
 {
-    GuardType guard(_configLock);
-    return _filename;
+    GuardType guard(m_configLock);
+    return m_filename;
 }

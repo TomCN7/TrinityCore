@@ -24,24 +24,13 @@
 #include <algorithm>
 #include <ace/Auto_Ptr.h>
 
-BigNumber::BigNumber()
-    : _bn(BN_new())
-{ }
+BigNumber::BigNumber() : _bn(BN_new()) { }
 
-BigNumber::BigNumber(BigNumber const& bn)
-    : _bn(BN_dup(bn._bn))
-{ }
+BigNumber::BigNumber(BigNumber const& bn) : _bn(BN_dup(bn._bn)) { }
 
-BigNumber::BigNumber(uint32 val)
-    : _bn(BN_new())
-{
-    BN_set_word(_bn, val);
-}
+BigNumber::BigNumber(uint32 val) : _bn(BN_new()) { BN_set_word(_bn, val); }
 
-BigNumber::~BigNumber()
-{
-    BN_free(_bn);
-}
+BigNumber::~BigNumber() { BN_free(_bn); }
 
 void BigNumber::SetDword(uint32 val)
 {

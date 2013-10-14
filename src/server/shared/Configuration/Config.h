@@ -38,7 +38,7 @@ class ConfigMgr
 
 public:
     /// Method used only for loading main configuration files (authserver.conf and worldserver.conf)
-    bool LoadInitial(char const* file);
+    bool LoadInitial(char const* szFile);
 
     /**
      * This method loads additional configuration files
@@ -58,15 +58,15 @@ public:
     std::string const& GetFilename();
 
 private:
-    bool GetValueHelper(const char* name, ACE_TString &result);
+    bool GetValueHelper(const char* strName, ACE_TString &Result);
     bool LoadData(char const* file);
 
     typedef ACE_Thread_Mutex LockType;
     typedef ACE_Guard<LockType> GuardType;
 
-    std::string _filename;
-    Config _config;
-    LockType _configLock;
+    std::string m_filename;
+    Config m_config;
+    LockType m_configLock;
 
     ConfigMgr(ConfigMgr const&);
     ConfigMgr& operator=(ConfigMgr const&);

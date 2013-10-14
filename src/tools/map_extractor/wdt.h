@@ -7,8 +7,10 @@
 //**************************************************************************************
 #define WDT_MAP_SIZE 64
 
-class wdt_MWMO{
-    union{
+class wdt_MWMO
+{
+    union
+	{
         uint32 fcc;
         char   fcc_txt[4];
     };
@@ -17,8 +19,10 @@ public:
     bool prepareLoadedData();
 };
 
-class wdt_MPHD{
-    union{
+class wdt_MPHD
+{
+    union
+	{
         uint32 fcc;
         char   fcc_txt[4];
     };
@@ -36,15 +40,18 @@ public:
     bool   prepareLoadedData();
 };
 
-class wdt_MAIN{
-    union{
+class wdt_MAIN
+{
+    union
+	{
         uint32 fcc;
         char   fcc_txt[4];
     };
 public:
     uint32 size;
 
-    struct adtData{
+    struct adtData
+	{
         uint32 exist;
         uint32 data1;
     } adt_list[64][64];
@@ -52,7 +59,8 @@ public:
     bool   prepareLoadedData();
 };
 
-class WDT_file : public FileLoader{
+class WDT_file : public FileLoader
+{
 public:
     bool   prepareLoadedData();
 

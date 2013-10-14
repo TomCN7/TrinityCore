@@ -16,10 +16,8 @@ public:
     class Exception
     {
     public:
-        Exception(const std::string &message): message(message)
-        { }
-        virtual ~Exception()
-        { }
+        Exception(const std::string &message): message(message) { }
+        virtual ~Exception() { }
         const std::string &getMessage() {return message;}
     private:
         std::string message;
@@ -27,8 +25,7 @@ public:
     class NotFound: public Exception
     {
     public:
-        NotFound(): Exception("Key was not found")
-        { }
+        NotFound(): Exception("Key was not found") { }
     };
     // Iteration over database
     class Iterator;
