@@ -48,7 +48,6 @@
     <ClCompile Include="..\..\Build\CMakeFiles\CompilerIdC\CMakeCCompilerId.c" />
     <ClCompile Include="..\..\Build\CMakeFiles\CompilerIdCXX\CMakeCXXCompilerId.cpp" />
     <ClCompile Include="..\..\src\server\collision\BoundingIntervalHierarchy.cpp" />
-    <ClCompile Include="..\..\src\server\collision\PrecompiledHeaders\collisionPCH.cpp" />
     <ClCompile Include="..\..\src\server\collision\DynamicTree.cpp" />
     <ClCompile Include="..\..\src\server\collision\Models\GameObjectModel.cpp" />
     <ClCompile Include="..\..\src\server\collision\Maps\MapTree.cpp" />
@@ -1313,7 +1312,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\src\server\collision\BoundingIntervalHierarchy.h" />
     <ClInclude Include="..\..\src\server\collision\BoundingIntervalHierarchyWrapper.h" />
-    <ClInclude Include="..\..\src\server\collision\PrecompiledHeaders\collisionPCH.h" />
     <ClInclude Include="..\..\src\server\collision\DynamicTree.h" />
     <ClInclude Include="..\..\src\server\collision\Models\GameObjectModel.h" />
     <ClInclude Include="..\..\src\server\collision\Management\IVMapManager.h" />

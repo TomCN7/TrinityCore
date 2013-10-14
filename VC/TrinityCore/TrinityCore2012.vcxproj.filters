@@ -282,9 +282,6 @@
     <ClCompile Include="..\..\src\server\collision\BoundingIntervalHierarchy.cpp">
       <Filter>Collision</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\server\collision\PrecompiledHeaders\collisionPCH.cpp">
-      <Filter>Collision</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\server\collision\DynamicTree.cpp">
       <Filter>Collision</Filter>
     </ClCompile>
@@ -3786,9 +3783,6 @@
       <Filter>Collision</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\server\collision\BoundingIntervalHierarchyWrapper.h">
-      <Filter>Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\server\collision\PrecompiledHeaders\collisionPCH.h">
       <Filter>Collision</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\server\collision\DynamicTree.h">
