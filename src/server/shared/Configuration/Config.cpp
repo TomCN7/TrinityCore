@@ -74,42 +74,42 @@ bool ConfigMgr::Reload()
     return LoadInitial(m_filename.c_str());
 }
 
-bool ConfigMgr::LoadData(char const* file)
+bool ConfigMgr::LoadData(char const* szFile)
 {
     ACE_Ini_ImpExp config_importer(*m_config.get());
-    if (config_importer.import_config(file) == 0)
+    if (config_importer.import_config(szFile) == 0)
         return true;
 
     return false;
 }
 
-std::string ConfigMgr::GetStringDefault(const char* name, const std::string &def)
+std::string ConfigMgr::GetStringDefault(const char* szName, const std::string &def)
 {
     ACE_TString val;
-    return GetValueHelper(name, val) ? val.c_str() : def;
+    return GetValueHelper(szName, val) ? val.c_str() : def;
 }
 
-bool ConfigMgr::GetBoolDefault(const char* name, bool def)
+bool ConfigMgr::GetBoolDefault(const char* strName, bool def)
 {
     ACE_TString val;
 
-    if (!GetValueHelper(name, val))
+    if (!GetValueHelper(strName, val))
         return def;
 
     return 
 		(val == "true" || val == "TRUE" || val == "yes" || val == "YES" || val == "1");
 }
 
-int ConfigMgr::GetIntDefault(const char* name, int def)
+int ConfigMgr::GetIntDefault(const char* strName, int def)
 {
     ACE_TString val;
-    return GetValueHelper(name, val) ? atoi(val.c_str()) : def;
+    return GetValueHelper(strName, val) ? atoi(val.c_str()) : def;
 }
 
-float ConfigMgr::GetFloatDefault(const char* name, float def)
+float ConfigMgr::GetFloatDefault(const char* strName, float def)
 {
     ACE_TString val;
-    return GetValueHelper(name, val) ? (float)atof(val.c_str()) : def;
+    return GetValueHelper(strName, val) ? (float)atof(val.c_str()) : def;
 }
 
 std::string const& ConfigMgr::GetFilename()
